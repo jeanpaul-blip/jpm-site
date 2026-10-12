@@ -3,273 +3,414 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JP Mieux-être — Changer à 50 ans</title>
-  <meta name="description" content="Comment j'ai survécu à un infarctus et une rupture à 43 ans, et retrouvé santé, amour et sens à 50 ans.">
+  <title>JP Mieux-être — Changer de cap après 50 ans</title>
+  <meta name="description" content="Partage d'expérience et carnet pratique pour retrouver le souffle, la vitalité et la paix intérieure après 50 ans.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --terre: #8B6F5C;
-      --corail: #C86B57;
-      --sable: #F5F0EA;
-      --creme: #FDFBF8;
-      --ardoise: #3A3A3A;
-      --chaud: #E8DDD2;
+      --bg: #FFFFFF;
+      --bg-alt: #FBFBFE;
+      --card-bg: #FFFFFF;
+      --primary: #1E293B;
+      --text: #334155;
+      --text-muted: #64748B;
+      --violet: #8A57C2;
+      --violet-hover: #7342AB;
+      --violet-light: #F5EEFD;
+      --border: #E8EBF0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-md: 0 12px 28px -6px rgba(138, 87, 194, 0.08), 0 4px 10px -4px rgba(0,0,0,0.03);
+      --radius: 16px;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.7;
-      color: var(--ardoise);
-      background: var(--sable);
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    header {
-      text-align: center;
-      padding: 56px 0 32px;
-    }
-    .tagline {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--corail);
-      border: 1px solid rgba(200,107,87,0.35);
-      padding: 8px 16px;
-      border-radius: 999px;
-      margin-bottom: 22px;
-    }
+
     h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary);
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
       font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      color: #2a2a2a;
-    }
-    header h1 {
-      font-size: 2.2rem;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-    header p {
-      font-size: 1.15rem;
-      color: var(--terre);
-      font-weight: 300;
-    }
-    .card {
-      background: var(--creme);
-      border-radius: 22px;
-      padding: 44px 32px;
-      box-shadow: 0 8px 30px rgba(139,111,92,0.08);
-      margin-bottom: 28px;
-    }
-    .hero {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 160px;
-      height: 160px;
-      background: var(--chaud);
-      border-radius: 50%;
-      opacity: 0.5;
-      z-index: 0;
-    }
-    .hero h2 {
-      font-size: 1.65rem;
-      line-height: 1.3;
-      margin-bottom: 22px;
-      position: relative;
-      z-index: 1;
-    }
-    .hero p {
-      margin-bottom: 18px;
-      font-size: 1.05rem;
-      position: relative;
-      z-index: 1;
-    }
-    .quote {
-      border-left: 4px solid var(--corail);
-      padding-left: 22px;
-      font-style: italic;
-      color: var(--terre);
-      margin: 26px 0;
-      position: relative;
-      z-index: 1;
-    }
-    .cta-button {
-      display: inline-block;
-      background: var(--corail);
-      color: #fff;
-      text-decoration: none;
-      padding: 17px 30px;
-      border-radius: 10px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-top: 12px;
-      text-align: center;
-      transition: transform 0.15s ease, background 0.15s ease;
-      position: relative;
-      z-index: 1;
-    }
-    .cta-button:hover {
-      background: #b55a49;
-      transform: translateY(-2px);
-    }
-    .section h3 {
       font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .logo span { color: var(--violet); }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--violet-light);
+      color: var(--violet);
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .hero {
+      padding: 70px 0 50px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.65;
+    }
+    .hero-cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .btn-main {
+      display: inline-block;
+      background: var(--violet);
+      color: #FFFFFF;
+      padding: 16px 32px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(138, 87, 194, 0.28);
+      transition: all 0.2s ease;
+    }
+    .btn-main:hover {
+      background: var(--violet-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(138, 87, 194, 0.38);
+    }
+    .reassurance {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-visual {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .hero-visual .mockup-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--violet);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .hero-visual h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+    .hero-visual p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
       margin-bottom: 20px;
     }
-    .section p, .section li {
-      margin-bottom: 14px;
-      font-size: 1rem;
-    }
-    .section ul {
-      padding-left: 22px;
-      margin-bottom: 14px;
-    }
-    .section li {
-      padding-left: 6px;
-    }
-    .mini-form {
-      margin-top: 28px;
-    }
-    .mini-form input {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 12px;
-      border: 1px solid #ddd4cc;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-family: inherit;
-      background: #fff;
-    }
-    .mini-form button {
-      width: 100%;
-      padding: 17px;
-      background: var(--corail);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-    .mini-form button:hover {
-      background: #b55a49;
-    }
-    .trust {
-      text-align: center;
-      color: var(--terre);
+    .carnet-pill {
+      display: inline-block;
+      background: #FFFFFF;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
       font-size: 0.85rem;
-      margin-top: 14px;
+      color: var(--primary);
+      font-weight: 500;
     }
-    .photo-placeholder {
-      width: 110px;
-      height: 110px;
-      background: var(--chaud);
-      border-radius: 50%;
-      margin: 0 auto 22px;
+
+    .story-section {
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 48px;
+      margin: 40px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 14px;
+      background: #F1F3F7;
+      border: 1px solid var(--border);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--terre);
-      font-size: 0.85rem;
-      font-style: italic;
     }
-    footer {
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-caption {
       text-align: center;
-      padding: 36px 0 44px;
-      color: var(--terre);
-      font-size: 0.9rem;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
-    footer a {
-      color: var(--corail);
-      text-decoration: none;
+    .photo-caption strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.95rem;
     }
-    @media (max-width: 480px) {
-      header h1 { font-size: 1.8rem; }
-      .hero h2 { font-size: 1.4rem; }
-      .card { padding: 32px 22px; }
+    .story-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .story-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--primary);
+      border-left: 3px solid var(--violet);
+      padding-left: 18px;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+    .story-content p {
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .features-section {
+      padding: 50px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 { font-size: 2.1rem; margin-bottom: 12px; }
+    .section-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--violet);
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #2D1B4E 0%, #171126 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 56px 40px;
+      text-align: center;
+      margin: 60px 0;
+    }
+    .cta-banner h2 {
+      color: #FFFFFF;
+      font-size: 2.3rem;
+      margin-bottom: 16px;
+    }
+    .cta-banner p {
+      color: #E2D9F3;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
+      .hero h1 { font-size: 2.15rem; }
+      .story-grid { grid-template-columns: 1fr; gap: 24px; }
+      .photo-frame { max-width: 200px; margin: 0 auto; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .story-section { padding: 32px 20px; }
+      .cta-banner { padding: 40px 20px; }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
+    <header>
+      <a href="#" class="logo">JP <span>Mieux-être</span></a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBOwj0E5UtPhdbfUdt0g3PvYaWk6jbGbk2kKKGVpyU13wI5A/viewform" target="_blank" class="btn-main" style="padding: 10px 20px; font-size: 0.9rem;">Recevoir le carnet</a>
+    </header>
 
-  <header>
-    <div class="tagline">JP Mieux-être</div>
-    <h1>Changer à 50 ans : ce que personne ne te dit</h1>
-    <p>Une méthode simple, humaine et sans bullshit</p>
-  </header>
+    <main>
+      <section class="hero">
+        <div>
+          <span class="badge">Inspiration &amp; Réflexions après 50 ans</span>
+          <h1>Changer de cap après 50 ans sans tout casser.</h1>
+          <p class="hero-lead">
+            Tu as traversé une épreuve, un signal d'alerte du corps ou un tournant de vie ? Voici des repères simples et concrets pour retrouver ton calme intérieur et ton élan à ton rythme.
+          </p>
+          <div class="hero-cta-box">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBOwj0E5UtPhdbfUdt0g3PvYaWk6jbGbk2kKKGVpyU13wI5A/viewform" target="_blank" class="btn-main">
+              Télécharger mon carnet des 30 jours
+            </a>
+            <span class="reassurance">Accès immédiat · 100 % libre et offert · Zéro spam</span>
+          </div>
+        </div>
 
-  <section class="card hero">
-    <h2>Vous avez 50 ans, une vie qui ne vous ressemble plus, et la peur sourde qu'il soit trop tard ?</h2>
-    <p>Il n'est pas trop tard. Je l'ai vécu à 43 ans après un infarctus et une séparation. Voici la méthode exacte pour faire le point et changer de cap sans tout casser.</p>
-    
-    <div class="quote">
-      "En 2013, j'étais dans ma maison, seul devant la fenêtre, les yeux pleins de larmes. Mon corps venait de lâcher et mon couple venait d'exploser. J'ai cru que tout était fini."
-    </div>
-    
-    <p><strong>Aujourd'hui, j'ai 56 ans.</strong> J'ai retrouvé la santé, l'amour et le sens de ma vie. Et j'accompagne les femmes et les hommes de plus de 50 ans qui refusent de baisser les bras.</p>
+        <div class="hero-visual">
+          <div class="mockup-tag">Carnet d'auto-coaching</div>
+          <h3>Carnet des 30 Jours</h3>
+          <p>Le Nouveau Départ : 6 exercices concrets à faire en totale autonomie chez toi.</p>
+          <div class="carnet-pill">Format PDF imprimable · 3 pages d'action</div>
+        </div>
+      </section>
 
-    <a href="#guide" class="cta-button">Recevoir le guide gratuit</a>
-  </section>
+      <section class="story-section">
+        <div class="story-grid">
+          <div>
+            <div class="photo-frame">
+              <img src="photo-jean-paul.png" alt="Jean-Paul">
+            </div>
+            <div class="photo-caption">
+              <strong>Jean-Paul</strong>
+              56 ans · Fondateur
+            </div>
+          </div>
+          <div class="story-content">
+            <h2>Le déclic d'un second souffle</h2>
+            <div class="story-quote">
+              « En 2013, à 43 ans, mon corps m'a envoyé un signal d'arrêt net avec un infarctus, en plein tournant de vie. Ce jour-là, j'ai compris qu'il était impossible de continuer sur la même trajectoire. »
+            </div>
+            <p>
+              Il m'a fallu réapprendre à écouter mon corps, apaiser la pression intérieure et faire le tri dans ce qui compte vraiment.
+            </p>
+            <p>
+              Aujourd'hui, à 56 ans, j'ai retrouvé une vitalité, un calme et une joie de vivre profonde. À travers mes écrits et ce carnet, je partage simplement ce chemin d'homme avec celles et ceux qui veulent aborder ce cap avec confiance.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <section class="card section" id="guide">
-    <h3>Guide gratuit : Les 5 questions avant de changer de vie à 50 ans</h3>
-    <p>Dans ce guide pratique de 6 pages, vous allez découvrir :</p>
-    <ul>
-      <li><strong>Question 1 :</strong> Ce qui doit changer : votre vie, ou juste une partie ?</li>
-      <li><strong>Question 2 :</strong> De quoi avez-vous peur exactement ?</li>
-      <li><strong>Question 3 :</strong> Qu'est-ce que vous savez déjà faire que le monde vous demande ?</li>
-      <li><strong>Question 4 :</strong> Que pouvez-vous tester dès cette semaine sans rien risquer ?</li>
-      <li><strong>Question 5 :</strong> Qui vous accompagne sur ce chemin ?</li>
-    </ul>
+      <section class="features-section">
+        <div class="section-title">
+          <h2>Les 6 repères du Carnet</h2>
+          <p>Des exercices simples à pratiquer seul, pas à pas.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-num">01</div>
+            <h3>Le Bilan lucide</h3>
+            <p>Poser calmement sur le papier ce qui ne te convient plus, sans panique.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">02</div>
+            <h3>Faire taire le Tribunal</h3>
+            <p>Apaiser cette voix intérieure qui te dit qu'il est "trop tard" pour changer.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">03</div>
+            <h3>La Boussole intime</h3>
+            <p>Te reconnecter à ce qui compte vraiment pour toi aujourd'hui.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">04</div>
+            <h3>La règle des 48h</h3>
+            <p>Prendre du recul pour protéger ton énergie face aux contrariétés.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">05</div>
+            <h3>Le Droit d'exister</h3>
+            <p>Retrouver ta liberté d'être toi-même dans tes relations quotidiennes.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">06</div>
+            <h3>Les petites victoires</h3>
+            <p>Avancer planche par planche, avec un petit pas concret chaque matin.</p>
+          </div>
+        </div>
+      </section>
 
-    <form class="mini-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Merci ! Le guide vous sera envoyé très bientôt.');">
-      <input type="text" name="prenom" placeholder="Votre prénom" required>
-      <input type="email" name="email" placeholder="Votre adresse email" required>
-      <button type="submit">Télécharger le guide gratuitement</button>
-    </form>
-    <p class="trust">🔒 Zéro spam. Vos données restent strictement confidentielles.</p>
-  </section>
+      <section class="cta-banner">
+        <h2>Prêt à amorcer ton second souffle ?</h2>
+        <p>Prends le temps de faire le point avec un support sobre, clair et conçu pour t'accompagner en douceur.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBOwj0E5UtPhdbfUdt0g3PvYaWk6jbGbk2kKKGVpyU13wI5A/viewform" target="_blank" class="btn-main">
+          Télécharger mon carnet des 30 jours
+        </a>
+      </section>
+    </main>
 
-  <section class="card section">
-    <div class="photo-placeholder">votre photo ici</div>
-    <h3>Qui est Jean-Paul ?</h3>
-    <p>Je suis Jean-Paul, fondateur de JP Mieux-être. Après 30 ans dans le commercial et la gestion de projets, ma vie a basculé en 2013.</p>
-    <p>Infarctus. Séparation. Seul dans ma maison. Je ne savais plus qui j'étais ni où j'allais.</p>
-    <p>J'ai cherché, lu, appliqué. Relaxation, méditation, auto-hypnose, EFT, travail sur le souffle. <strong>Appliquer, appliquer, appliquer.</strong> Deux ans plus tard, j'étais un autre homme.</p>
-    <p>Aujourd'hui, je partage ce chemin. Pas avec des théories miracles. Avec le vécu réel de celui qui a traversé la tempête.</p>
-  </section>
-
-  <section class="card section">
-    <h3>Ce que vous allez apprendre</h3>
-    <ul>
-      <li>Pourquoi à 50 ans, votre expérience est un trésor — pas un fardeau.</li>
-      <li>L'exercice des 3 colonnes : isoler ce qui coince sans tout casser.</li>
-      <li>La méthode du pont « planche par planche » pour démarrer sans risque.</li>
-      <li>Comment retrouver du calme intérieur — et pourquoi le reste suit.</li>
-      <li>Les 3 profils dont vous avez besoin autour de vous pour avancer sereinement.</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2026 JP Mieux-être — Jean-Paul</p>
-    <p style="font-size: 0.8rem; margin-top: 8px;">Une création en cours · Rien n'est publié sans validation finale</p>
-  </footer>
-
-</div>
+    <footer>
+      <p><strong>JP Mieux-être</strong> · Jean-Paul</p>
+      <p style="font-size: 0.78rem; opacity: 0.8; margin-top: 8px;">
+        Ce carnet et ces réflexions accompagnent une démarche personnelle de mieux-être et ne remplacent en aucun cas un avis médical.
+      </p>
+    </footer>
+  </div>
 
 </body>
 </html>
